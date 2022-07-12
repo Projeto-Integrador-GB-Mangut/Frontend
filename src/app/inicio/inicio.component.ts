@@ -43,6 +43,7 @@ export class InicioComponent implements OnInit {
   
     this.findAllTema()
     this.findAllPostagem()
+    this.findByIdUsuario()
   }
 
   findAllTema() {
