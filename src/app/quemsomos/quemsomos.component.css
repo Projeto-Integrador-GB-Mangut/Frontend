@@ -1,0 +1,9 @@
+.bg-foto {
+    background-image: url('https://i.imgur.com/Ty0VTTS.png');
+    background-size: 100%;
+}
+
+.bg-linear {
+    background: rgb(142,87,48);
+    background: linear-gradient(90deg, rgba(142,87,48,1) 0%, rgba(11,91,15,1) 18%, rgba(11,91,15,1) 81%, rgba(142,87,48,1) 100%);
+}

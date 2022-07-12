@@ -9,7 +9,7 @@ export class QuemsomosComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

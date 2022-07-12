@@ -19,27 +19,27 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
   }
 
   entrar() {
-    this.authService.entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin)=>{
-
+    this.authService.entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
+      this.usuarioLogin = resp
+      
       environment.token = this.usuarioLogin.token
       environment.id = this.usuarioLogin.id
       environment.foto = this.usuarioLogin.foto
       environment.nome = this.usuarioLogin.nome
-      
+
       console.log(environment.foto)
       console.log(environment.id)
       console.log(environment.nome)
       console.log(environment.token)
-
-      this.usuarioLogin = resp
-      this.router.navigate(['/login'])
-    }, erro =>{
-      if(erro.status == 401) {
-        alert('Usuário ou senha estão incorretos!')
+      
+      this.router.navigate(['/inicio'])
+    }, erro => {
+      if (erro.status == 401) {
+        alert('Cadastro incorreto ou não encontrado. Digite novamente ou se cadastre!')
       }
     })
   }

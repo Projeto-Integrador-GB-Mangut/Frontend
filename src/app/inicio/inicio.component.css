@@ -1,0 +1,19 @@
+.bg-foto{
+    background-image: url('https://i.imgur.com/8DLaSu2.png');
+}
+
+.bg-row{
+    background-color: rgba(17, 73, 20, 0.336);
+    backdrop-filter: blur(10px);
+}
+
+.fs-54{
+    font-size: 54pt;
+}
+
+.fs-18{
+    font-size: 18pt;
+}
+.btn-purple{
+    background-color: rgb(59, 20, 8);
+} 
