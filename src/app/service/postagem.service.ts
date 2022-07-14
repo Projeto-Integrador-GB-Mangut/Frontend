@@ -46,6 +46,6 @@ export class PostagemService {
   }
 
   deletePostagem(id: number){
-    return this.http.delete('https://mangut.herokuapp.com/postagens/${id}', this.token)
+    return this.http.delete(`https://mangut.herokuapp.com/postagens/${id}`, this.token)
   }
 }
