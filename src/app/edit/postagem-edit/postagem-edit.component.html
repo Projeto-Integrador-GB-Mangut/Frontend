@@ -27,10 +27,10 @@
                   </div>
             
                   <div class="form-group mt-2">
-                    <label for="texto">Escolha um Tema, ou <a data-dismiss="modal" routerLink='/tema'>Crie um novo Tema</a>: </label>
+                    <label for="texto">Escolha um Tema</label>
                     <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
                       <option *ngFor='let item of listTema' value="{{item.id}}">
-                        {{item.descricao}}
+                        {{item.categoria}}
                       </option>
                     </select>
                   </div>
