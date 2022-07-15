@@ -264,8 +264,8 @@ border-radius: 10px;
 .flip-card {
   background-color: transparent;
   margin-right: 30px;
-  width: 300px;
-  height: 250px;
+  width: 230px;
+  height: 330px;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
   margin-bottom: 30px;
@@ -287,8 +287,8 @@ border-radius: 10px;
 }
 
 .flip-card img{
-  width:300px;
-  height:250px;
+  width:230px;
+  height:330px;
 }
 @media screen and (max-width:800px){
   .flip-card img{
