@@ -25,6 +25,12 @@
                     <label for="texto">Texto</label>
                     <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3"></textarea>
                   </div>
+
+                  <div class="form-group">
+                    <label for="usuario">Link da Midia</label>
+                    <input [(ngModel)]='postagem.midia' type="text" class="form-control" name="midia" id="midia"
+                      placeholder="Insira o link da midia...">
+                  </div>
             
                   <div class="form-group mt-2">
                     <label for="texto">Escolha um Tema</label>

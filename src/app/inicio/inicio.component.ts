@@ -52,9 +52,14 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/login'])
     }
 
+    if (environment.foto == '') {
+      this.foto = "https://imgur.com/yoIMvHt"
+    }
+
     this.getAllTemas()
     this.getAllPostagens()
     this.findByIdUser()
+
   }
 
   getAllTemas() {

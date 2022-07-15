@@ -23,6 +23,7 @@ import { OrderModule } from 'ngx-order-pipe';
 import { TokenInterceptorService } from './service/token-interceptor.service';
 import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { MenuHomeComponent } from './menu-home/menu-home.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     TemaEditComponent,
     PostagemDeleteComponent,
     TemaDeleteComponent,
-    AlertasComponent
+    AlertasComponent,
+    MenuHomeComponent
   ],
   imports: [
     BrowserModule,

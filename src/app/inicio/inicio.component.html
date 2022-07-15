@@ -56,8 +56,7 @@
 
     <div class="box-col justify-content-center align-items-center pt-5">
 
-      <img src="https://i.imgur.com/yoIMvHt.gif" alt="user pfp" width="120px" height="120px"
-        class="img-fluid rounded-circle">
+      <img src="{{foto}}" alt="user pfp" width="120px" height="120px" class="img-fluid rounded-circle">
 
       <h2 class="pt-3 gr-txt">{{nome}}</h2>
 
@@ -92,25 +91,15 @@
       <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
         aria-labelledby="nav-todasPostagens-tab">
 
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-4">
-
-            <div class="d-flex align-items-center">
-
-              <div class="row d-flex justify-content-center mb-3 mt-1">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="tituloPesquisa"
-                      placeholder="Digite um titulo para pesquisar" [(ngModel)]='tituloPost'
-                      (keyup)='findByTituloPostagem()'>
-                  </div>
-                </div>
-              </div>
-
+        <div class="row d-flex justify-content-center mb-3 mt-1">
+          <div class="col-md-12">
+            <div class="form-group">
+              <input type="text" class="form-control" id="tituloPesquisa" placeholder="Digite um titulo para pesquisar"
+                [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
             </div>
-
           </div>
         </div>
+
 
         <div class="d-flex flex-wrap justify-content-center">
           <div class="card text-white bg-dark border-rounded m-2 card-w100" style="border-radius: 15px ;"
@@ -120,7 +109,7 @@
 
               <div class="d-flex align-items-center">
 
-                <img src="https://i.imgur.com/yoIMvHt.gif" alt="user pfp" width="75px" height="75px"
+                <img src="{{item.usuario.foto}}" alt="user pfp" width="75px" height="75px"
                   class="img-fluid rounded-circle">
 
                 <div class="box-col pl-3">
@@ -134,7 +123,17 @@
             </div>
 
             <div class="card-body btn-light">
-              <p class="card-text text-main-dark">{{item.texto}}</p>
+
+              <div>
+
+                <p class="card-text text-main-dark">{{item.texto}}</p>
+
+                <div class="card w-100">
+                  <img class="card-img-top" src={{item.midia}}>
+                </div>
+
+              </div>
+
             </div>
 
             <div class="card-footer text-muted ">
@@ -173,7 +172,17 @@
               </div>
 
               <div class="card-body btn-light">
-                <p class="card-text text-main-dark">{{item.texto}}</p>
+
+                <div>
+
+                  <p class="card-text text-main-dark">{{item.texto}}</p>
+
+                  <div class="card w-100">
+                    <img class="card-img-top" src={{item.midia}}>
+                  </div>
+
+                </div>
+
               </div>
 
               <p class="card-text pt-3"><small class="text-light">
@@ -198,9 +207,8 @@
         <div class="row d-flex justify-content-center mb-3 mt-1">
           <div class="col-md-12">
             <div class="form-group">
-              <input type="text" class="form-control" id="tituloPesquisa"
-                placeholder="Digite um tema para pesquisar" [(ngModel)]='nomeTema'
-                (keyup)='findByNomeTema()'>
+              <input type="text" class="form-control" id="tituloPesquisa" placeholder="Digite um tema para pesquisar"
+                [(ngModel)]='nomeTema' (keyup)='findByNomeTema()'>
             </div>
           </div>
         </div>
@@ -214,7 +222,7 @@
 
               <div class="d-flex align-items-center p-4">
 
-                <img src="https://i.imgur.com/yoIMvHt.gif" alt="user pfp" width="75px" height="75px"
+                <img src="{{item.usuario.foto}}" alt="user pfp" width="75px" height="75px"
                   class="img-fluid rounded-circle">
 
                 <div class="box-col pl-3">
@@ -226,7 +234,17 @@
               </div>
 
               <div class="card-body btn-light">
-                <p class="card-text text-main-dark">{{item.texto}}</p>
+
+                <div>
+
+                  <p class="card-text text-main-dark">{{item.texto}}</p>
+
+                  <div class="card w-100">
+                    <img class="card-img-top" src={{item.midia}}>
+                  </div>
+
+                </div>
+
               </div>
 
               <div class="card-footer text-muted ">
@@ -314,6 +332,13 @@
           <label for="texto">Texto</label>
           <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3"></textarea>
         </div>
+
+        <div class="form-group">
+          <label for="usuario">Link da Midia</label>
+          <input [(ngModel)]='postagem.midia' type="text" class="form-control" name="midia" id="midia"
+            placeholder="Insira o link da midia...">
+        </div>
+
 
         <div class="form-group">
           <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>:

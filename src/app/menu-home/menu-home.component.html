@@ -9,15 +9,15 @@
             <li class="nav-item dropdown my-2 my-lg-0 text-right ">
                 <a class="nav-link dropdown-toggle text-warning" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    {{nome}}
+                    Acesso
                 </a>
                 <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                     
-                    <a (click)='sair()' class="dropdown-item m-0 font-weight-bold text-white fs-16">Sair<i class="fa fa-sign-out"
+                    <a  routerLink="/login" class="dropdown-item m-0 font-weight-bold text-white fs-16">Sair<i class="fa fa-sign-out"
                             aria-hidden="true"></i></a>
 
 
-                    <a [routerLink]="['/usuario-edit', id]" class="dropdown-item m-0 text-white font-weight-bold fs-20">Editar<i
+                    <a routerLink="/login" class="dropdown-item m-0 text-white font-weight-bold fs-20">Editar<i
                             class="fa fa-wrench fs-20" aria-hidden="true"></i></a>
 
                 </div>
