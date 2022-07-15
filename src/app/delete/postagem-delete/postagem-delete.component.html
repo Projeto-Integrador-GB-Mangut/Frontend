@@ -1,37 +1,41 @@
-<div class="container mb-5 mt-5">
+<div class="container-fluid p-5 d-flex text-light bg-gr justify-content-center">
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center text-secondary">Apagar Postagem</h1>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <h4 class="text-center text-secondary">Você tem certeza que deseja apagar essa postagem?</h4>
-        </div>
-    </div>
-
-    <div class="row d-flex justify-content-center mt-4">
-        <div class="col-md-4">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title m-0">{{postagem.titulo}}</h5>
-                    <small class="text-muted">Tema: {{postagem.tema.categoria}}</small>
-                    <p class="card-text mt-3">{{postagem.texto}}</p>
-                    <p class="card-text"><small class="text-muted">{{postagem.date | date: 'dd/MM/yyyy'}} às
-                            {{postagem.date | date: 'HH:mm'}}</small></p>
-                </div>
+    <div class="cardts p-3" style="border-radius: 20px; width: 100vh;">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="fs-54 text-center mb-2">Deletar Postagem</h1>
             </div>
         </div>
-    </div>
 
-    <div class="row mt-5">
-        <div class="col-md-12 d-flex justify-content-center">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8">
+                <h5 class="fs-18 text-center">Tem Certeza que quer prosseguir?</h5>
+                <h5 class="fs-18 text-center pb-3">Não é possível recuperar postagens após sua deleção.</h5>
 
-            <button class="btn btn-danger mr-4" routerLink='/inicio'>Não</button>
-            <button class="btn btn-success" (click)='apagar()'>Sim</button>
+                <div class="card text-white bg-dark border-rounded m-2">
 
+                    <div class="card-header">
+                        <h5 class="card-title">{{postagem.titulo}}</h5>
+                        <p class="card-text"> <small>por: </small> <small class="fw-800">você</small></p>
+                    </div>
+
+                    <div class="card-body btn-light">
+                        <p class="card-text text-main-dark ">{{postagem.texto}}</p>
+                    </div>
+
+                    <div class="card-footer text-muted">
+                        <p class="card-text"><small class="text-white">{{postagem.date | date: 'dd/MM/yyyy'}} {{postagem.date |
+                                date: 'HH:mm'}} </small></p>
+                    </div>
+
+                </div>
+
+                <div class="d-flex justify-content-center mt-3 mb-3">
+                    <button class="btn btn-warning mr-3" (click)='apagar()'>Deletar</button>
+                    <button class="btn btn-outline-warning" routerLink='/inicio'>Cancelar</button>
+                </div>
+
+            </div>
         </div>
     </div>
 

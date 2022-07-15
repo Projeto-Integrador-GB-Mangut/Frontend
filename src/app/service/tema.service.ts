@@ -25,12 +25,12 @@ getByIdTema(id: number): Observable<Tema>{
   return this.http.get<Tema>(`https://mangut.herokuapp.com/temas/${id}`, this.token)
 }
 
-getByDescricaoTema(descricao: string): Observable<Tema> {
-  return this.http.get<Tema>(`https://mangut.herokuapp.com/temas/descricao/${descricao}`, this.token)
+getByDescricaoTema(descricao: string): Observable<Tema[]> {
+  return this.http.get<Tema[]>(`https://mangut.herokuapp.com/temas/descricao/${descricao}`, this.token)
 }
 
-getByCategoriaTema(categoria: string): Observable<Tema>{
-  return this.http.get<Tema>(`https://mangut.herokuapp.com/temas/categoria/${categoria}`, this.token)
+getByCategoriaTema(categoria: string): Observable<Tema[]>{
+  return this.http.get<Tema[]>(`https://mangut.herokuapp.com/temas/categoria/${categoria}`, this.token)
 }
 
 postTema(tema: Tema): Observable<Tema> {

@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment.prod';
 export class AuthService {
 
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
 
   token = {
@@ -26,15 +26,15 @@ export class AuthService {
     return this.http.post<Usuario>('https://mangut.herokuapp.com/usuarios/cadastrar', usuario)
   }
 
-  getByIdUsuario(id: number): Observable<Usuario>{
+  getByIdUsuario(id: number): Observable<Usuario> {
     return this.http.get<Usuario>(`https://mangut.herokuapp.com/usuarios/${id}`, this.token)
   }
 
-  getByEmailUsuario(usuario: string): Observable<Usuario>{
+  getByEmailUsuario(usuario: string): Observable<Usuario> {
     return this.http.get<Usuario>(`https://mangut.herokuapp.com/usuarios/email/${usuario}`, this.token)
   }
 
-  getAllUsuarios(): Observable<Usuario[]>{
+  getAllUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>('https://mangut.herokuapp.com/usuarios/all', this.token)
   }
 
@@ -42,13 +42,22 @@ export class AuthService {
     return this.http.put<Usuario>('https://mangut.herokuapp.com/usuarios/atualizar', usuario)
   }
 
-  logado(){
-    let ok:boolean = false
+  logado() {
+    let ok: boolean = false
 
-    if(environment.token !=''){
-      ok=true 
+    if (environment.token != '') {
+      ok = true
+    }
+    return ok
   }
-  return ok
+
+adm() {
+  let ok: boolean = false
+
+    if (environment.tipoUsuario == 'adm') {
+      ok = true
+    }
+    return ok 
 }
 
 }

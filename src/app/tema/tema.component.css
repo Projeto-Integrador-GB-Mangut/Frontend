@@ -5,4 +5,11 @@
 
 .btn-purple{
     background-color: purple;
-} 
+}
+
+.cardts {
+    background: rgba(17, 25, 40, 0.75);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+    border-radius: 10px;
+}

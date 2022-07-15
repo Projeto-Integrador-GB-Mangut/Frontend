@@ -1,76 +1,79 @@
-<div class="container-fluid">
+<!--mewokvmKVM,WOAKLÇVVÇLW,Vdsa-->
+<div class="bg-darker p-0">
+    <a routerLink='/inicio' class="text-light ps-3">
+        <i class="fa fa-angle-double-left" aria-hidden="true"> HOME</i>
+    </a>
+</div>
 
-    <div class="row bg-row">
+<div class="container-fluid p-5 d-flex text-light bg-gr justify-content-center">
 
-        <div class="col-md-12 text-dark">
+    <div class="cardts p-3" style="border-radius: 20px; width: 110vh;">
+        <h1 class="fs-54 text-center">Temas</h1>
+        <h5 class="fs-18 text-center mt-3">Veja todos os temas disponíveis, ou registre um novo</h5>
 
-            <a class="text-light text-left text-dark" routerLink="/inicio">
-                <i class="fa fa-home text-dark" aria-hidden="true"></i> início
-            </a>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+                
+                <div class="form-group">
+                    <h6 class="mt-2 mb-2">Categoria:</h6>
+                    <input [(ngModel)]="tema.categoria" type="text" class="form-control" id="categoria"
+                        placeholder="Digite aqui qual tema será cadastrado">
+                </div>
+                <div class="form-group">
+                    <h6 class="mt-2 mb-2">Descrição:</h6>
+                    <textarea name="descricao" [(ngModel)]="tema.descricao" type="text" class="form-control"
+                        id="descricao" placeholder="Digite aqui a descrição do tema"></textarea>
+                </div>
 
-            <h1 class="fs-54 text-center">Temas</h1>
-            <h5 class="fs-18 text-center">Veja aqui todos os temas das nossas lembranças ou <a
-                    routerLink="/cadastro"></a>
-                cadastre um novo</h5>
+                <div class="d-flex justify-content-center pt-3 pb-3">
+                    <button class="btn btn-light" (click)="cadastrar()">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <div class="row d-flex justify-content-center mt-4 mb-5">
-                <div class="col-md-3 text-center">
-                    <div class="form-group">
-                        <h6 class="mt-2 mb-2">Categoria:</h6>
-                        <input [(ngModel)]="tema.categoria" type="text" class="form-control" id="categoria"
-                            placeholder="Digite aqui qual tema será cadastrado">
-                    </div>
-                    <div class="form-group">
-                        <h6 class="mt-2 mb-2 text-center">Descrição:</h6>
-                        <textarea name="descricao" [(ngModel)]="tema.descricao" type="text" class="form-control"
-                            id="descricao" placeholder="Digite aqui a descrição do tema"></textarea>
-                    </div>
+</div>
 
-                    <div class="d-flex justify-content-center">
-                        <button class="btn bg-row" (click)='cadastrar()'>Cadastrar</button>
-                    </div>
+<div class="bg-dark">
+    <div class="container bg-dark pt-1">
+        <div class="container bg-dark text-light p-0">
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h2 class="text-center">
+                        Temas Existentes
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row mt-3 pb-5 d-flex justify-content-center bg-dark">
+                <div class="col-md-6">
+
+                    <table class="table table-hover table-dark p-0 mt-3">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col" class="text-end">Modificadores</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let tema of listTema'>
+                                <th>{{tema.id}}</th>
+                                <td>{{tema.categoria}}</td>
+                                <td>{{tema.descricao}}</td>
+                                <td class="d-flex justify-content-end">
+                                    <button class="btn btn-warning mr-3" [routerLink]="['/tema-edit', tema.id]">Editar</button>
+                                    <button class="btn btn-outline-warning" [routerLink]="['/tema-delete', tema.id]">Deletar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
 
         </div>
-    </div>
-</div>
 
-<div class="container">
-
-    <div class="row mt-5">
-
-        <div class="col-md-12">
-            <h2 class="text-center">Todos os temas</h2>
-        </div>
-    </div>
-    <div class="row mt-3 mb-5 d-flex justify-content-center">
-        <div class="col-md-6">
-
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Categoria</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col" class="text-right">Modificações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let i of listTema">
-                        <th>{{i.id}}</th>
-                        <td>{{i.categoria}}</td>
-                        <td>{{i.descricao}}</td>
-                        <div class="d-flex justify-content-end">
-                            <button [routerLink]="['/tema-edit', i.id]" type="button"
-                                class="btn btn-purple text-light mr-3 mt-3">Editar</button>
-                            <button [routerLink]="['/tema-delete', i.id]" type="button"
-                                class="btn btn-danger mt-3">Apagar</button>
-                        </div>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
     </div>
 </div>

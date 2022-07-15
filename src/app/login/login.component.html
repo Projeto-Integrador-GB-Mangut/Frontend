@@ -1,65 +1,67 @@
-<!-- Div agrupamento -->
-<div class=" container-fluid bg-color">
+<div class="container-fluid p-5 bg-gr">
 
-    <div class="box-form align-item justify-content-center">
+    <div class="container-fluid bg-dark box-shadow text-light" style="border-radius: 20px">
 
-        <div class="left">
-            <!-- Div Esquerdo texto -->
-            <div class="overlay">
-                <h1>Vamos semear o bem</h1>
-                <img src="https://i.imgur.com/Hx9nr47.png" alt="LogoMangut">
+        <div class="row">
 
+            <div class="col-md-7 d-flex justify-content-center align-items-center" id="img-bg"
+                style="border-end-start-radius: 20px; border-start-start-radius: 20px">
 
-                <h2>Não tem conta? Então</h2>
-                <hr class="my-4">
-                <button class="btn-conta pt-3"><a routerLink="/cadastro" style="color:black ;">clique aqui e se
-                        cadastre</a></button>
+                <div class="cardts box-shadow p-3" style="width: 20rem; height: max-content; border-radius: 10px;">
+                    <div class="card-body p-0 d-flex justify-content-center">
+                        <img style="height: 75px;" src="https://i.imgur.com/4pShSKx.png" alt="">
+                    </div>
+                    <h3 class="text-center text-light">vamos semear o bem</h3>
+                    <h6 class="text-center text-light">
 
-            </div>
-        </div>
+                        <hr class="mt-4">
 
-        <!-- Div Entrar Direito -->
-        <div class="right">
-            <br>
-            <h1 class="text-center mb-3">Entrar</h1>
+                        <p class="text-center text-light text-md">
+                            Não tem uma conta? <a routerLink="/cadastro">Cadastre-se</a>
+                        </p>
 
-
-
-            <div class="wrapper">
-                <div class="input-data">
-                    <input [(ngModel)]='usuarioLogin.usuario' type="text" class="form-control" name="usuario"
-                        id="usuario" required>
-                    <div class="underline"></div>
-                    <label>Usuário E-mail</label>
+                    </h6>
                 </div>
 
-                <hr class="my-45">
-
-                <div class="wrapper">
-                    <div class="input-data">
-                        <input [(ngModel)]="usuarioLogin.senha" type="password" class="form-control" name="senha"
-                            id="senha" required>
-                        <div class="underline"></div>
-                        <label>Senha</label>
-                    </div>
-
-
-
-
-
-                    <hr class="my-4">
-
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-success" (click)='entrar()'>Entrar</button>
-                    </div>
-
-
-
-
-                </div>
             </div>
+
+            <div class="col-md-5 pt-5">
+
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-10">
+
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-10">
+
+                                <h1 class="text-center text-light main-txt mt-5">Login</h1>
+
+                                <div class="form-group">
+                                    <label for="user">E-mail</label>
+                                    <input [(ngModel)]='usuarioLogin.usuario' type="text" class="form-control"
+                                        name="usuario" id="usuario" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input [(ngModel)]='usuarioLogin.senha' class="form-control" type="password"
+                                        name="password" id="password" placeholder="password">
+                                </div>
+
+                                <hr class="mt-4">
+
+                                <div class="d-flex justify-content-center pt-1">
+                                    <button type="submit" class="btn btn-outline-warning"
+                                        (click)='entrar()'>Entrar</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
-
-</div>

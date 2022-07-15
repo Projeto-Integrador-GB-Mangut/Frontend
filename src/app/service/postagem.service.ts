@@ -25,8 +25,8 @@ export class PostagemService {
     return this.http.get<Postagem>(`https://mangut.herokuapp.com/postagens/${id}`, this.token)
   }
 
-  getByTituloPostagem(titulo: string): Observable<Postagem> {
-    return this.http.get<Postagem>(`https://mangut.herokuapp.com/postagens/titulo/${titulo}`, this.token)
+  getByTituloPostagem(titulo: string): Observable<Postagem[]> {
+    return this.http.get<Postagem[]>(`https://mangut.herokuapp.com/postagens/titulo/${titulo}`, this.token)
   }
 
   getByTextoPostagem(texto: string): Observable<Postagem> {
@@ -44,6 +44,14 @@ export class PostagemService {
   putPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.put<Postagem>('https://mangut.herokuapp.com/postagens', postagem, this.token)
   }
+
+  // putPostagemCurtir(id: number): Observable<Postagem> {
+  //   return this.http.put<Postagem>(`https://mangut.herokuapp.com/postagens/curtir/${id}`, this.token)
+  // }
+
+  // putPostagemDescurtir(id: number): Observable<Postagem> {
+  //   return this.http.put<Postagem>(`https://mangut.herokuapp.com/postagens/curtir/${id}`, this.token)
+  // }
 
   deletePostagem(id: number){
     return this.http.delete(`https://mangut.herokuapp.com/postagens/${id}`, this.token)

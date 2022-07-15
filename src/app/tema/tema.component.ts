@@ -22,11 +22,18 @@ export class TemaComponent implements OnInit {
   ngOnInit() {
 
     if(environment.token == ''){
-      // alert ('Sua sessão expirou. Faça o login novamente!')
+      alert ('Sua sessão expirou. Faça o login novamente!')
        this.router.navigate(['/login'])
      }
 
-     this.findAllTema()
+    //  if(environment.tipoUsuario != "adm"){
+    //   alert('Você precisa ser um adm para acessar essa rota')
+    //   this.router.navigate(['/inicio'])
+    //  } else {
+    //   this.router.navigate(['/tema'])
+    //  }
+
+    this.findAllTema()
   }
 
   cadastrar(){
