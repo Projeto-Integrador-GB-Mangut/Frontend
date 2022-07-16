@@ -9,20 +9,32 @@ ul.social-network li {
     padding: 5px;
 }
 
-span{
+span {
     font-weight: 600;
 }
 
 .fa {
     font-size: 35pt;
-    color: white;
+    color: (255, 255, 255);
     padding: 10px;
 }
 
 .fa:hover {
-    color:  #60ce9e;
+    color: #127e08;
 }
 
-.bg-gr{
+.bg-gr {
     background-color: #9ed939;
+}
+
+.bg-logo {
+    background-color: rgba(206, 170, 103, 0.63);
+}
+
+.text-logo {
+    color: #522C18;
+}
+
+.text-logo:hover {
+    color: #127e08;
 }
