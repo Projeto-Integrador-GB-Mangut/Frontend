@@ -13,7 +13,7 @@ import { TemaComponent } from './tema/tema.component';
 
 const routes: Routes = [
 
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'quemsomos', pathMatch: 'full' },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'login', component: LoginComponent},
   { path: 'quemsomos', component: QuemsomosComponent},

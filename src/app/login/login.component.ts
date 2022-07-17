@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/inicio'])
     }, erro => {
       if (erro.status == 401) {
-        this.alertas.showAlertInfo('Cadastro incorreto ou não encontrado. Digite novamente ou se cadastre!')
+        this.alertas.showAlertInfo('Cadastro incorreto ou não encontrado. Digite novamente ou Cadastre-se!')
       }
     })
   }
