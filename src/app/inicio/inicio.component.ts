@@ -163,7 +163,7 @@ export class InicioComponent implements OnInit {
     let cor
 
     if(tipoUsuario == 'Admin'){
-      cor = "primary"
+      cor = "green"
     } else if (tipoUsuario  == 'Normal') {
       cor = "dark"
     } else {

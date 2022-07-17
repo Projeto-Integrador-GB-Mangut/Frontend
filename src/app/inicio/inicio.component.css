@@ -1,5 +1,5 @@
 #img-bg {
-    background-image: url('https://i.imgur.com/soZo9rf.jpg');
+    background-image: url('https://i.imgur.com/yrHByQa.jpg');
 
     min-height: 90vh;
 
@@ -62,4 +62,12 @@
 
     justify-content: space-between;
 
+}
+
+.bg-green {
+    background-color: #31401f;
+}
+
+.bg-darker {
+    background-color: #071104;
 }
