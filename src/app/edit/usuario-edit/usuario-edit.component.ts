@@ -55,11 +55,11 @@ export class UsuarioEditComponent implements OnInit {
     this.usuario.tipoUsuario = this.tipoDoUsuario
 
     if (this.usuario.senha != this.confirmSenha) {
-      alert('As senhas não coincidem. Digite corretamente!')
+      this.alertas.showAlertInfo('As senhas não coincidem. Digite corretamente!')
     } else {
       this.authService.atualizarUsuario(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
-        alert('Atualização realizada com sucesso! Faça login novamente')
+        this.alertas.showAlertSuccess('Atualização realizada com sucesso! Faça login novamente')
         environment.token = ''
         environment.nome = ''
         environment.foto = ''

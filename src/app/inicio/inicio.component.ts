@@ -19,6 +19,7 @@ export class InicioComponent implements OnInit {
   nome = environment.nome
   foto = environment.foto
   id = environment.id
+  tipoUsuario = environment.tipoUsuario
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
@@ -155,6 +156,20 @@ export class InicioComponent implements OnInit {
     environment.nome = ''
     environment.foto = ''
     environment.id = 0
+  }
+
+  corPost(tipoUsuario: string) {
+
+    let cor
+
+    if(tipoUsuario == 'Admin'){
+      cor = "primary"
+    } else if (tipoUsuario  == 'Normal') {
+      cor = "dark"
+    } else {
+      cor = "dark"
+    }
+    return cor
   }
 
 }
