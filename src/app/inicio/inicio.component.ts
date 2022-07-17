@@ -83,7 +83,7 @@ export class InicioComponent implements OnInit {
 
   findByTituloPostagem() {
 
-    if(this.tituloPost == '') {
+    if (this.tituloPost == '') {
       this.getAllPostagens()
     } else {
       this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
@@ -94,10 +94,10 @@ export class InicioComponent implements OnInit {
   }
 
   findByNomeTema() {
-    if(this.nomeTema == '') {
+    if (this.nomeTema == '') {
       this.getAllTemas
     } else {
-      this.temaService.getByDescricaoTema(this.nomeTema).subscribe((resp: Tema[])=> {
+      this.temaService.getByDescricaoTema(this.nomeTema).subscribe((resp: Tema[]) => {
         this.listaTemas = resp
       })
     }
@@ -142,6 +142,10 @@ export class InicioComponent implements OnInit {
       this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
+    }, erro => {
+      if (erro.status == 401) {
+        this.alertas.showAlertInfo('Não foi possível criar a postagem, revise os dados!')
+      }
     })
   }
 

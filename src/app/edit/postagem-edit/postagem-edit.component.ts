@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
 import { Tema } from 'src/app/model/Tema';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
@@ -24,15 +25,16 @@ export class PostagemEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private postagemService: PostagemService,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
 
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
     if (environment.token == '') {
-    alert ('Sua sessão expirou. Faça o login novamente!')
+      alert('Sua sessão expirou. Faça o login novamente!')
       this.router.navigate(['/login'])
     }
 
@@ -41,32 +43,36 @@ export class PostagemEditComponent implements OnInit {
     this.findAllTema()
   }
 
-  findByIdPostagem(id: number){
-    this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem)=>{
+  findByIdPostagem(id: number) {
+    this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem) => {
       this.postagem = resp
     })
   }
 
-  atualizar(){
+  atualizar() {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
 
-    this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem)=>{
+    this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      alert('Sua postagem foi atualizada com sucesso')
+      this.alertas.showAlertSuccess('Sua postagem foi atualizada com sucesso')
       this.router.navigate(['/inicio'])
+    }, erro => {
+      if (erro.status == 401) {
+        this.alertas.showAlertInfo('Não foi possível fazer a edição, revise os dados!')
+      }
     })
   }
 
-  findAllTema(){
-    this.temaService.getAllTema().subscribe((resp: Tema[])=>{
+  findAllTema() {
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
       this.listTema = resp
     })
   }
 
-  findByIdTema(){
-    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
-      this.tema=resp
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
+      this.tema = resp
     })
   }
 

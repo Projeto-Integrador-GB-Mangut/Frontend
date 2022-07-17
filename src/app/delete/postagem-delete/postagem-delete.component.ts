@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
@@ -13,13 +14,14 @@ import { environment } from 'src/environments/environment.prod';
 export class PostagemDeleteComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
-idPost: number
-  
+  idPost: number
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private postagemService: PostagemService,
-    
+    private alertas: AlertasService
+
   ) { }
 
   ngOnInit() {
@@ -31,7 +33,7 @@ idPost: number
     }
     this.idPost = this.route.snapshot.params['id']
     this.findByIdPostagem(this.idPost)
-    
+
   }
 
   findByIdPostagem(id: number) {
@@ -43,9 +45,13 @@ idPost: number
 
 
   apagar() {
-    this.postagemService.deletePostagem(this.idPost).subscribe(()=>{
-      alert('Postagem apagada com sucesso!')
+    this.postagemService.deletePostagem(this.idPost).subscribe(() => {
+      this.alertas.showAlertSuccess('Postagem apagada com sucesso!')
       this.router.navigate(['/inicio'])
+    }, erro => {
+      if (erro.status == 401) {
+        this.alertas.showAlertInfo('Não foi possível fazer a deleção, revise os dados!')
+      }
     })
   }
 

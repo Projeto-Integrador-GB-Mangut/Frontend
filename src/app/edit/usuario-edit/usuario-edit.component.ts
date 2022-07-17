@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -22,7 +23,8 @@ export class UsuarioEditComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
 
   ) { }
 
@@ -63,6 +65,10 @@ export class UsuarioEditComponent implements OnInit {
         environment.foto = ''
         environment.id = 0
         this.router.navigate(['/login'])
+      }, erro => {
+        if (erro.status == 401) {
+          this.alertas.showAlertInfo('Não foi possível fazer a edição, revise os dados!')
+        }
       })
     }
   }

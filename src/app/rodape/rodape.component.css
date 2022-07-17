@@ -9,20 +9,43 @@ ul.social-network li {
     padding: 5px;
 }
 
-span{
+span {
     font-weight: 600;
+}
+
+hr {
+    border: 1px solid whitesmoke;
+}
+
+.one-hundred-vw {
+    width: 100%;
+
+    position: relative;
+    max-width: 100%;
 }
 
 .fa {
     font-size: 35pt;
-    color: white;
+    color: (255, 255, 255);
     padding: 10px;
 }
 
 .fa:hover {
-    color:  #60ce9e;
+    color: #ffe259;
 }
 
-.bg-gr{
+.bg-gr {
     background-color: #9ed939;
+}
+
+.bg-logo {
+    background-color: rgba(206, 170, 103, 0.63);
+}
+
+.text-logo {
+    color: whitesmoke;
+}
+
+.text-logo:hover {
+    color: #ffe259;
 }

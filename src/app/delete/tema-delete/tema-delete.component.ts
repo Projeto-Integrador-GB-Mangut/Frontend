@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tema } from 'src/app/model/Tema';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -11,17 +12,18 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class TemaDeleteComponent implements OnInit {
 
-tema: Tema = new Tema()
-idTema: number
+  tema: Tema = new Tema()
+  idTema: number
 
   constructor(
     private temaService: TemaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
-    if(environment.token == ''){
+    if (environment.token == '') {
       this.router.navigate(['/login'])
     }
 
@@ -29,16 +31,20 @@ idTema: number
     this.findByIdTema(this.idTema)
   }
 
-  findByIdTema(id: number){
-    this.temaService.getByIdTema(id).subscribe((resp: Tema)=>{
+  findByIdTema(id: number) {
+    this.temaService.getByIdTema(id).subscribe((resp: Tema) => {
       this.tema = resp
     })
   }
 
-  apagar(){
-    this.temaService.deleteTema(this.idTema).subscribe(()=>{
-      alert('Tema apagado com sucesso!')
+  apagar() {
+    this.temaService.deleteTema(this.idTema).subscribe(() => {
+      this.alertas.showAlertSuccess('Tema apagado com sucesso!')
       this.router.navigate(['/tema'])
+    }, erro => {
+      if (erro.status == 401) {
+        this.alertas.showAlertInfo('Não foi possível fazer a deleção, revise os dados!')
+      }
     })
   }
 }
