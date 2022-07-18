@@ -64,14 +64,14 @@
 
         <ul class="navbar-nav ml-auto d-flex align-items-center">
           <li class="nav-item">
-            <a [routerLink]="['/usuario-edit', id]" class="m-0 font-weight-bold fs-20">Editar<i
+            <a [routerLink]="['/usuario-edit', id]" class="m-0 font-weight-bold fs-20 text-warning">Editar<i
                 class="fa fa-wrench fs-20" aria-hidden="true"></i></a>
           </li>
         </ul>
 
         <ul class="navbar-nav ml-auto d-flex align-items-center">
           <li class="nav-item">
-            <a (click)="sair()" class="m-0 font-weight-bold fs-20">Sair <i class="fa fa-sign-out fs-20"
+            <a (click)="sair()" class="m-0 font-weight-bold fs-20 text-warning">Sair <i class="fa fa-sign-out fs-20"
                 aria-hidden="true"></i></a>
         </ul>
 
@@ -343,7 +343,7 @@
 
 
         <div class="form-group">
-          <label  for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink='/tema'>cadastre um novo</a>:
+          <label  for="texto">Escolha um tema ou <a data-dismiss="modal" class="text-warning" routerLink='/tema'>cadastre um novo</a>:
           </label>
           <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
             <option *ngFor='let item of listaTemas' value="{{item.id}}">
