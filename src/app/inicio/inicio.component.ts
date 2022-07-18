@@ -54,7 +54,7 @@ export class InicioComponent implements OnInit {
     }
 
     if (environment.foto == '') {
-      this.foto = "https://imgur.com/yoIMvHt"
+      this.foto = "https://i.imgur.com/xnlALES.jpg"
     }
 
     this.getAllTemas()
