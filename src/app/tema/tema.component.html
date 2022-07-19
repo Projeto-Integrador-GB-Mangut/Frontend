@@ -9,7 +9,7 @@
 
     <div class="cardts p-3" style="border-radius: 20px; width: 110vh;">
         <h1 class="fs-54 text-center">Temas</h1>
-        <h5 class="fs-18 text-center mt-3">Veja todos os temas disponíveis, ou registre um novo</h5>
+        <h5 class="fs-18 text-center mt-3">Veja abaixo todos os temas disponíveis ou registre um novo</h5>
 
         <div class="row d-flex justify-content-center">
             <div class="col-md-5">
@@ -17,16 +17,16 @@
                 <div class="form-group">
                     <h6 class="mt-2 mb-2">Categoria:</h6>
                     <input [(ngModel)]="tema.categoria" type="text" class="form-control" id="categoria"
-                        placeholder="Digite aqui qual tema será cadastrado">
+                        placeholder="Digite o tema que será cadastrado">
                 </div>
                 <div class="form-group">
                     <h6 class="mt-2 mb-2">Descrição:</h6>
                     <textarea name="descricao" [(ngModel)]="tema.descricao" type="text" class="form-control"
-                        id="descricao" placeholder="Digite aqui a descrição do tema"></textarea>
+                        id="descricao" placeholder="Digite a descrição do tema"></textarea>
                 </div>
 
                 <div class="d-flex justify-content-center pt-3 pb-3">
-                    <button class="btn btn-light" (click)="cadastrar()">Cadastrar</button>
+                    <button class="btn btn-warning" (click)="cadastrar()">Cadastrar</button>
                 </div>
             </div>
         </div>

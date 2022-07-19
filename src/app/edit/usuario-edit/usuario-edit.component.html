@@ -3,7 +3,7 @@
     <div class="cardts p-3" style="border-radius: 20px; width: 80vh;">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="fs-54 text-center">Editar Usuario</h1>
+                <h1 class="fs-54 text-center">Editar Usuário</h1>
             </div>
         </div>
     
@@ -15,37 +15,37 @@
                         <div class="col-md-12">
         
                             <div class="form-group">
-                                <label for="username">Apelido</label>
-                                <input [(ngModel)]='usuario.nome' class="form-control" type="text" name="username" id="username" placeholder="Username">
+                                <label for="username">Nome</label>
+                                <input [(ngModel)]='usuario.nome' class="form-control" type="text" name="username" id="username" placeholder="Digite seu nome">
                             </div>
         
                             <div class="form-group">
                                 <label for="user">E-mail</label>
-                                <input [(ngModel)]='usuario.usuario' class="form-control" type="text" name="user" id="user" placeholder="E-mail adress">
+                                <input [(ngModel)]='usuario.usuario' class="form-control" type="text" name="user" id="user" placeholder="Digite seu e-mail">
                             </div>
         
                             <div class="form-group">
                                 <label for="photo">Foto de perfil</label>
                                 <input [(ngModel)]='usuario.foto' class="form-control" type="text" name="photo" id="photo"
-                                    placeholder="Profile picture URL link">
+                                    placeholder="Insira aqui o link da sua foto de perfil">
                             </div>
         
                             <div class="form-group">
-                                <label for="password">Password</label>
+                                <label for="password">Senha</label>
                                 <input (input)='confirmarSenha($event)' class="form-control" type="password" name="password" id="password"
-                                    placeholder="Password">
+                                    placeholder="Digite sua senha">
                             </div>
         
                             <div class="form-group">
-                                <label for="confirmPassword">Confirm Password</label>
+                                <label for="confirmPassword">Confirmar senha</label>
                                 <input [(ngModel)]='usuario.senha' class="form-control" type="password" name="confirmPassword" id="confirmPassword"
-                                    placeholder="Confirm your Password">
+                                    placeholder="Confirme sua senha">
                             </div>
         
                             <div class="form-group">
-                                <label for="confirmPassword">Selecione um Tipo de Usuario</label>
+                                <label for="confirmPassword">Selecione um Tipo de Usuário</label>
                                 <select class="form-control" name="type" id="type" (change)='tipoUsuario($event)'>
-                                    <option>Selecione um Tipo de Usuario</option>
+                                    <option>Selecione um tipo de Usuário</option>
                                     <option value="Normal">Normal</option>
                                     <option value="Admin">Admin</option>
                                 </select>
@@ -58,8 +58,8 @@
                 </div>
     
                 <div class="d-flex justify-content-center mt-3 mb-3">
-                    <button class="btn btn-light mr-3" (click)="atualizar()">Editar</button>
-                    <button class="btn btn-outline-danger" routerLink="/inicio">Cancelar</button>
+                    <button class="btn btn-warning mr-3" (click)="atualizar()">Editar</button>
+                    <button class="btn btn-outline-warning" routerLink="/inicio">Cancelar</button>
                 </div>
     
             </div>
