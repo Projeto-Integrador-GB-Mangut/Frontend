@@ -71,3 +71,7 @@
 .bg-darker {
     background-color: #071104;
 }
+
+.user-pfp {
+    max-width: 75px; max-height: 75px; min-width: 75px; min-height: 75px
+}
