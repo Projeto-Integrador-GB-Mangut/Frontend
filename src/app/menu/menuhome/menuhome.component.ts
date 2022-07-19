@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
@@ -8,7 +9,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class MenuhomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }

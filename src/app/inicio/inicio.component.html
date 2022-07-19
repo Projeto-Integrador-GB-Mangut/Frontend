@@ -3,7 +3,7 @@
   <div class="row align-items-center m-0 p-0">
     <div class="col-md-6 p-5">
 
-      <div class="cardts box-shadow" style="width: max-content; height: max-content; border-radius: 10px;">
+      <div class="cardts box-shadow pb-5 pt-3" style="width: max-content; height: max-content; border-radius: 10px;">
 
         <div class="row d-flex align-items-center justify-content-center">
 
@@ -110,7 +110,7 @@
               <div class="d-flex align-items-center">
 
                 <img src="{{item.usuario.foto}}" alt="user pfp" width="75px" height="75px"
-                  class="img-fluid rounded-circle">
+                  class="img-fluid rounded-circle"  (error)="verificaImagem($event)" >
 
                 <div class="box-col pl-3">
                   <h5 class="card-title">{{item.titulo}}</h5>
@@ -164,7 +164,7 @@
 
 
         <div class="d-flex flex-wrap justify-content-center">
-          <div class="card text-center m-2 bg-{{corPost(item.tipoUsuario)}} card-w100" style="border-radius: 15px ;"
+          <div class="card text-center m-2 bg-{{corPost(user.tipoUsuario)}} card-w100" style="border-radius: 15px ;"
             *ngFor='let item of user.postagem | orderBy: key : reverse'>
             <div class="card-body pr-0 pl-0">
 
@@ -225,7 +225,7 @@
               <div class="d-flex align-items-center p-4">
 
                 <img src="{{item.usuario.foto}}" alt="user pfp" width="75px" height="75px"
-                  class="img-fluid rounded-circle">
+                  class="img-fluid rounded-circle"  (error)="verificaImagem($event)" >
 
                 <div class="box-col pl-3">
                   <h5 class="card-title">{{item.titulo}}</h5>

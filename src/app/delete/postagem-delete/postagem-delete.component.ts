@@ -55,5 +55,19 @@ export class PostagemDeleteComponent implements OnInit {
     })
   }
 
+  corPost(tipoUsuario: string) {
+
+    let cor
+
+    if (tipoUsuario == 'Admin') {
+      cor = "green"
+    } else if (tipoUsuario == 'Normal') {
+      cor = "dark"
+    } else {
+      cor = "dark"
+    }
+    return cor
+  }
+
 }
 

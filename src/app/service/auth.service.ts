@@ -4,6 +4,7 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 import { Observable } from 'rxjs';
 import { Usuario } from '../model/Usuario';
 import { environment } from 'src/environments/environment.prod';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ import { environment } from 'src/environments/environment.prod';
 export class AuthService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    public router: Router
   ) { }
 
   token = {
@@ -60,14 +62,14 @@ export class AuthService {
     return ok
   }
 
-adm() {
-  let ok: boolean = false
+  adm() {
+    let ok: boolean = false
 
     if (environment.tipoUsuario == 'Admin') {
       ok = true
     }
-    return ok 
-}
+    return ok
+  }
 
 }
 

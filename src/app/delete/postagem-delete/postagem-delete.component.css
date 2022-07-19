@@ -4,3 +4,12 @@
     -webkit-backdrop-filter: blur(5.6px);
     border-radius: 10px;
 }
+
+.bg-green {
+    background-color: #31401f;
+  }
+  
+  .bg-darker {
+    background-color: #071104;
+  }
+  

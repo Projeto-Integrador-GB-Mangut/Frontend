@@ -53,7 +53,7 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/login'])
     }
 
-    if (environment.foto == '') {
+    if (environment.foto == null) {
       this.foto = "https://i.imgur.com/xnlALES.jpg"
     }
 
@@ -162,14 +162,20 @@ export class InicioComponent implements OnInit {
 
     let cor
 
-    if(tipoUsuario == 'Admin'){
+    if (tipoUsuario == 'Admin') {
       cor = "green"
-    } else if (tipoUsuario  == 'Normal') {
+    } else if (tipoUsuario == 'Normal') {
       cor = "dark"
     } else {
       cor = "dark"
     }
     return cor
+  }
+
+  verificaImagem(event: Event) {
+    const htmlImagem = event.target as HTMLImageElement;
+    htmlImagem.src =
+      'https://i.imgur.com/xnlALES.jpg';
   }
 
 }
