@@ -494,3 +494,12 @@ h5 {
 .fa-github-square:hover {
     color: #ffe259;
 }
+
+.bg-futuro {
+    background-image: url('https://i.imgur.com/CXbAF1l.png');
+
+    height: 770px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
