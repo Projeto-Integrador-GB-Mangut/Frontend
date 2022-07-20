@@ -64,14 +64,14 @@
 
         <ul class="navbar-nav ml-auto d-flex align-items-center">
           <li class="nav-item">
-            <a [routerLink]="['/usuario-edit', id]" class="m-0 font-weight-bold fs-20">Editar<i
+            <a [routerLink]="['/usuario-edit', id]" class="m-0 font-weight-bold fs-20 text-warning">Editar<i
                 class="fa fa-wrench fs-20" aria-hidden="true"></i></a>
           </li>
         </ul>
 
         <ul class="navbar-nav ml-auto d-flex align-items-center">
           <li class="nav-item">
-            <a (click)="sair()" class="m-0 font-weight-bold fs-20">Sair <i class="fa fa-sign-out fs-20"
+            <a (click)="sair()" class="m-0 font-weight-bold fs-20 text-warning">Sair <i class="fa fa-sign-out fs-20"
                 aria-hidden="true"></i></a>
         </ul>
 
@@ -94,7 +94,7 @@
         <div class="row d-flex justify-content-center mb-3 mt-1">
           <div class="col-md-12">
             <div class="form-group">
-              <input type="text" class="form-control" id="tituloPesquisa" placeholder="Digite um titulo para pesquisar"
+              <input type="text" class="form-control" id="tituloPesquisa" placeholder="Digite um título para pesquisar"
                 [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
             </div>
           </div>
@@ -327,18 +327,18 @@
         <div class="form-group">
           <label for="titulo">Título</label>
           <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
-            placeholder="Digite o título">
+            placeholder="Digite o título da sua postagem">
         </div>
 
         <div class="form-group">
           <label for="texto">Texto</label>
-          <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3"></textarea>
+          <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto"  placeholder="Digite o texto da sua postagem" rows="3"></textarea>
         </div>
 
         <div class="form-group">
-          <label for="usuario">Link da Midia</label>
+          <label for="usuario">Link da Mídia</label>
           <input [(ngModel)]='postagem.midia' type="text" class="form-control" name="midia" id="midia"
-            placeholder="Insira o link da midia...">
+            placeholder="Insira aqui o link da mídia">
         </div>
 
 
