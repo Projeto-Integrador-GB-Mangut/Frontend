@@ -79,6 +79,13 @@
     min-height: 75px
 }
 
+.user-pfp-main {
+    max-width: 120px;
+    max-height: 120px;
+    min-width: 120px;
+    min-height: 120px
+}
+
 .row {
     display: -ms-flexbox;
     display: flex;

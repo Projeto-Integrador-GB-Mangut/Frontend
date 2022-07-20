@@ -6,42 +6,47 @@
                 <h1 class="fs-54 text-center">Editar Usuário</h1>
             </div>
         </div>
-    
+
         <div class="row d-flex justify-content-center">
             <div class="col-md-8">
                 <div class="form-group">
-                
+
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-12">
-        
+
                             <div class="form-group">
                                 <label for="username">Nome</label>
-                                <input [(ngModel)]='usuario.nome' class="form-control" type="text" name="username" id="username" placeholder="Digite seu nome">
+                                <input [(ngModel)]='usuario.nome' class="form-control" type="text" name="username"
+                                    id="username" placeholder="Digite seu nome">
+                                <small class="text-secondary p-0 m-0">min: 3 characteres | max: 15 characteres</small>
                             </div>
-        
+
                             <div class="form-group">
                                 <label for="user">E-mail</label>
-                                <input [(ngModel)]='usuario.usuario' class="form-control" type="text" name="user" id="user" placeholder="Digite seu e-mail">
+                                <input [(ngModel)]='usuario.usuario' class="form-control" type="text" name="user"
+                                    id="user" placeholder="Digite seu e-mail">
+                                <small class="text-secondary p-0 m-0">min: 8 characteres</small>
                             </div>
-        
+
                             <div class="form-group">
-                                <label for="photo">Foto de perfil</label>
-                                <input [(ngModel)]='usuario.foto' class="form-control" type="text" name="photo" id="photo"
-                                    placeholder="Insira aqui o link da sua foto de perfil">
+                                <label for="usuario">Link da Foto</label>
+                                <input [(ngModel)]='usuario.foto' type="text" class="form-control" name="foto" id="foto"
+                                    placeholder="Insira o link da sua foto...">
                             </div>
-        
+
                             <div class="form-group">
                                 <label for="password">Senha</label>
-                                <input (input)='confirmarSenha($event)' class="form-control" type="password" name="password" id="password"
-                                    placeholder="Digite sua senha">
+                                <input (input)='confirmarSenha($event)' class="form-control" type="password"
+                                    name="password" id="password" placeholder="Digite sua senha">
+                                <small class="text-secondary p-0 m-0">min: 8 characteres</small>
                             </div>
-        
+
                             <div class="form-group">
                                 <label for="confirmPassword">Confirmar senha</label>
-                                <input [(ngModel)]='usuario.senha' class="form-control" type="password" name="confirmPassword" id="confirmPassword"
-                                    placeholder="Confirme sua senha">
+                                <input [(ngModel)]='usuario.senha' class="form-control" type="password"
+                                    name="confirmPassword" id="confirmPassword" placeholder="Confirme sua senha">
                             </div>
-        
+
                             <div class="form-group">
                                 <label for="confirmPassword">Selecione um Tipo de Usuário</label>
                                 <select class="form-control" name="type" id="type" (change)='tipoUsuario($event)'>
@@ -50,18 +55,18 @@
                                     <option value="Admin">Admin</option>
                                 </select>
                             </div>
-        
+
                         </div>
-        
+
                     </div>
-                
+
                 </div>
-    
+
                 <div class="d-flex justify-content-center mt-3 mb-3">
                     <button class="btn btn-warning mr-3" (click)="atualizar()">Editar</button>
                     <button class="btn btn-outline-warning" routerLink="/inicio">Cancelar</button>
                 </div>
-    
+
             </div>
         </div>
     </div>

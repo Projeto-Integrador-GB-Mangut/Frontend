@@ -1,37 +1,37 @@
 <div class="container-fluid p-5 d-flex text-light bg-gr justify-content-center">
-<div class="container cardts mt-5 mb-5">
+    <div class="container cardts mt-5 mb-5" style="width: 90vh;">
 
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="text-center text-light pt-3">Atualizar Tema</h1>
-      </div>
-    </div>
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-            
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center text-light pt-3">Atualizar Tema</h1>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
 
-            <div class="form-group">
-                        <h6 class="mt-2 mb-2 text-center">Categoria:</h6>
-                        <input [(ngModel)]="tema.categoria" type="text" class="form-control" id="categoria"
-                            placeholder="Digite aqui qual tema será cadastrado">
-                    </div>
-                    <div class="form-group">
-                        <h6 class="mt-2 mb-2 text-center">Descrição:</h6>
-                        <textarea name="descricao" [(ngModel)]="tema.descricao" type="text" class="form-control"
-                            id="descricao" placeholder="Digite aqui a descrição do tema"></textarea>
-                    </div>
 
-            <div class="d-flex justify-content-center pb-3">
-                <button class="btn btn-outline-warning mr-2"(click)='atualizar()'>Atualizar</button>
-                <button class="btn btn-warning mr-4" routerLink="/tema">Cancelar</button>
+                <div class="form-group">
+                    <h6 class="mt-2 mb-2 text-center">Categoria:</h6>
+                    <input [(ngModel)]="tema.categoria" type="text" class="form-control" id="categoria"
+                        placeholder="Digite aqui qual tema será cadastrado">
+
+                        <small class="text-secondary p-0 m-0">min: 5 characteres | max: 200 characteres</small>
+                </div>
+                <div class="form-group">
+                    <h6 class="mt-2 mb-2 text-center">Descrição:</h6>
+                    <textarea name="descricao" [(ngModel)]="tema.descricao" type="text" class="form-control"
+                        id="descricao" placeholder="Digite aqui a descrição do tema"></textarea>
+                        <small class="text-secondary p-0 m-0">min: 5 characteres | max: 500 characteres</small>
+                </div>
+
+                <div class="d-flex justify-content-center pb-5">
+                    <button class="btn btn-outline-warning mr-2" (click)='atualizar()'>Atualizar</button>
+                    <button class="btn btn-warning mr-4" routerLink="/tema">Cancelar</button>
+
+                </div>
 
             </div>
-
         </div>
+
     </div>
-
 </div>
-</div>
-
-
-

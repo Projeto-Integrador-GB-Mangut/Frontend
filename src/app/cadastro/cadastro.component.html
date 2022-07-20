@@ -16,21 +16,21 @@
                             <label for="nome">Nome</label>
                             <input [(ngModel)]='usuario.nome' type="text" class="form-control" name="nome" id="nome"
                                 placeholder="Digite seu nome...">
-                            <small class="text-secondary p-0 m-0">min: 3 chars | max: 15 chars</small>
+                            <small class="text-secondary p-0 m-0">min: 3 characteres | max: 15 characteres</small>
                         </div>
 
                         <div class="form-group">
                             <label for="usuario">E-mail</label>
                             <input [(ngModel)]='usuario.usuario' type="text" class="form-control" name="usuario"
                                 id="usuario" placeholder="Digite seu e-mail...">
-                            <small class="text-secondary p-0 m-0">min: 8 chars</small>
+                            <small class="text-secondary p-0 m-0">min: 8 characteres</small>
                         </div>
 
                         <div class="form-group">
                             <label for="senha">Senha</label>
                             <input (input)="confirmarSenha($event)" class="form-control" type="password" name="senha"
                                 id="senha" placeholder="Digite sua senha...">
-                                <small class="text-secondary p-0 m-0">min: 8 chars</small>
+                            <small class="text-secondary p-0 m-0">min: 8 characteres</small>
                         </div>
 
                         <div class="form-group">

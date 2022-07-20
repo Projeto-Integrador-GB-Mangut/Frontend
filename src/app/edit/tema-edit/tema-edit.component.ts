@@ -42,7 +42,7 @@ export class TemaEditComponent implements OnInit {
       this.alertas.showAlertSuccess('Tema atualizado com sucesso')
       this.router.navigate(['/tema'])
     }, erro => {
-      if (erro.status == 401) {
+      if (erro.status == 400) {
         this.alertas.showAlertInfo('Não foi possível fazer a edição, revise os dados!')
       }
     })
