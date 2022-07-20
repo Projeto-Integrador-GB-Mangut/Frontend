@@ -73,7 +73,10 @@
 }
 
 .user-pfp {
-    max-width: 75px; max-height: 75px; min-width: 75px; min-height: 75px
+    max-width: 75px;
+    max-height: 75px;
+    min-width: 75px;
+    min-height: 75px
 }
 
 .row {
@@ -83,5 +86,22 @@
     flex-wrap: wrap;
     margin-right: 0px !important;
     margin-left: 0px !important;
-  }
+}
+
+.gr-txt {
+    text-align: center;
+    font-weight: 800;
   
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 50%, #f1d99e 100%);
+  
+    background-size: 200% auto;
+  
+    color: #000;
+    background-clip: text;
+    text-decoration-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    animation: shine 4s linear infinite;
+  }

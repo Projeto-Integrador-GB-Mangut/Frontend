@@ -15,7 +15,7 @@
 
             <div class="row d-flex justify-content-center text-white">
               <h1 class="fs-48">Bem vindo(a)!</h1>
-              <h2 class="p-0 gr-txt mb-3">{{nome}}</h2>
+              <h4 class="p-0 gr-txt mb-3">{{nome}}</h4>
             </div>
 
             <h5 class="fs-18 pb-4">Ajude-nos a plantar um futuro melhor!</h5>
@@ -102,15 +102,15 @@
 
 
         <div class="d-flex flex-wrap justify-content-center">
-          <div class="card text-white bg-{{corPost(item.usuario.tipoUsuario)}} border-rounded m-2 card-w100" style="border-radius: 15px ;"
-            *ngFor='let item of listaPostagens | orderBy: key : reverse'>
+          <div class="card text-white bg-{{corPost(item.usuario.tipoUsuario)}} border-rounded m-2 card-w100"
+            style="border-radius: 15px ;" *ngFor='let item of listaPostagens | orderBy: key : reverse'>
 
             <div class="card-header">
 
               <div class="d-flex align-items-center">
 
-                <img src="{{item.usuario.foto}}" alt="user pfp"
-                  class="img-fluid rounded-circle user-pfp"  (error)="verificaImagem($event)" >
+                <img src="{{item.usuario.foto}}" alt="user pfp" class="img-fluid rounded-circle user-pfp"
+                  (error)="verificaImagem($event)">
 
                 <div class="box-col pl-3">
                   <h5 class="card-title">{{item.titulo}}</h5>
@@ -216,8 +216,8 @@
         </div>
 
         <div class="d-flex flex-wrap justify-content-center" *ngFor='let tema of listaTemas'>
-          <div class="card text-white bg-{{corPost(item.usuario.tipoUsuario)}} border-rounded m-2 card-w100 p-0" style="border-radius: 15px ;"
-            *ngFor='let item of tema.postagem | orderBy: key : reverse'>
+          <div class="card text-white bg-{{corPost(item.usuario.tipoUsuario)}} border-rounded m-2 card-w100 p-0"
+            style="border-radius: 15px ;" *ngFor='let item of tema.postagem | orderBy: key : reverse'>
 
 
             <div class="card-header p-0">
@@ -225,7 +225,7 @@
               <div class="d-flex align-items-center p-4">
 
                 <img src="{{item.usuario.foto}}" alt="user pfp" width="75px" height="75px"
-                  class="img-fluid rounded-circle user-pfp"  (error)="verificaImagem($event)" >
+                  class="img-fluid rounded-circle user-pfp" (error)="verificaImagem($event)">
 
                 <div class="box-col pl-3">
                   <h5 class="card-title">{{item.titulo}}</h5>
@@ -328,11 +328,14 @@
           <label for="titulo">Título</label>
           <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
             placeholder="Digite o título da sua postagem">
+          <small class="text-secondary p-0 m-0">min: 10 chars | max: 200 chars</small>
         </div>
 
         <div class="form-group">
           <label for="texto">Texto</label>
-          <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto"  placeholder="Digite o texto da sua postagem" rows="3"></textarea>
+          <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto"
+            placeholder="Digite o texto da sua postagem" rows="3"></textarea>
+          <small class="text-secondary p-0 m-0">min: 10 chars | max: 1000 chars</small>
         </div>
 
         <div class="form-group">
@@ -344,8 +347,9 @@
 
         <div class="form-group">
 
-          <label  for="texto">Escolha um tema<a *ngIf="user.tipoUsuario == 'Admin'" data-dismiss="modal" routerLink='/tema'> ou cadastre um novo</a>:
-          
+          <label for="texto">Escolha um tema<a *ngIf="user.tipoUsuario == 'Admin'" data-dismiss="modal"
+              routerLink='/tema'> ou cadastre um novo</a>:
+
           </label>
           <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
             <option *ngFor='let item of listaTemas' value="{{item.id}}">
