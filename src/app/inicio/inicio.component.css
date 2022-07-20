@@ -75,3 +75,13 @@
 .user-pfp {
     max-width: 75px; max-height: 75px; min-width: 75px; min-height: 75px
 }
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+  }
+  
